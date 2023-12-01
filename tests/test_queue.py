@@ -10,6 +10,10 @@ class TestStack(unittest.TestCase):
         que.enqueue('data1')
         que.enqueue('data2')
         self.assertIsNone(que.enqueue('data3'))
+        self.assertEqual(que.dequeue(), 'data1')
+        self.assertEqual(que.dequeue(), 'data2')
+        self.assertEqual(que.dequeue(), 'data3')
+        self.assertEqual(que.dequeue(), None)
 
     def test_node(self):
         self.assertTrue(Node(3))
