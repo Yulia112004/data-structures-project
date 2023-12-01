@@ -21,5 +21,12 @@ class Test_Class(unittest.TestCase):
         self.top = None
         self.assertEqual(self.top, None)
 
+    def test_pop(self):
+        stack = Stack()
+        stack.push("data1")
+        stack.push("data2")
+        stack.push("data3")
+        self.assertEqual(stack.pop(), "data3")
+
 if __name__ == '__main__':
     unittest.main()
